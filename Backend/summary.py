@@ -1,3 +1,6 @@
+from Backend.database import Base
+
+from Backend.auth import get_current_user
 from fastapi import APIRouter, Depends
 from Backend.auth import get_current_user
 
