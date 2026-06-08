@@ -1,3 +1,11 @@
+# Change these imports to include the 'Backend.' prefix
+from Backend.database import SessionLocal, engine, Base
+from Backend.auth import verify_password, create_access_token
+from Backend.models import User 
+
+# Do the exact same thing for your router imports
+from Backend.expense import router as expense_router 
+from Backend.summary import router as summary_router
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
