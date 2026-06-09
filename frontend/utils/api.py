@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://expensetracker-idh7.onrender.com"
 
 def login(username, password):
     try:
