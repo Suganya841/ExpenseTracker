@@ -9,13 +9,18 @@ def login(username, password):
             data={
                 "username": username,
                 "password": password
-            }
+            },
+            timeout=10
         )
 
         if response.status_code == 200:
             return response.json()
-        else:
+
+        # better error handling
+        try:
+            return response.json()
+        except:
             return {"error": response.text}
 
-    except Exception as e:
-        return {"error": str(e)}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Network error: {str(e)}"}
