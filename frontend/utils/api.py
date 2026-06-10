@@ -5,7 +5,7 @@ BASE_URL = "https://expensetracker-idh7.onrender.com"
 def login(username, password):
     response = requests.post(
         f"{BASE_URL}/login",
-        data={
+        json={
             "username": username,
             "password": password
         }
